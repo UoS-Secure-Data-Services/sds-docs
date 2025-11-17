@@ -50,13 +50,13 @@ Building the documentation on a local Windows machine
 
 #. Create a new *conda environment* for building the documentation by running the following from this window: ::
 
-    conda create --name sheffield_rcc-docs python=3.10
-    conda activate sheffield_rcc-docs	# . activate sheffield_rcc-docs on older versions of conda
+    conda create --name sds-docs python=3.11
+    conda activate sds-docs	# . activate sds-docs on older versions of conda
     pip install tox
 
 #. To build the HTML documentation run: ::
 
-    tox -e py310
+    tox -e py311
 
 The output should be written to ``./_build/html``.
 
@@ -68,7 +68,6 @@ Building the documentation on a local Linux machine
 
 #. Run Tox to create an isolated Python virtual environment then build documentation: ::
 
-     tox -e py310  # OR
      tox -e py311
 
 The output should be written to ``./_build/html``.
@@ -80,13 +79,13 @@ Building the documentation on a local Mac machine
 #. Install the Python packages needed to build the HTML documentation.  If you are using (mini)conda create a new *conda environment* for building the documentation by running: ::
 
     export PATH=${HOME}/miniconda3/bin:$PATH
-    conda create -n sheffield_rcc-docs python=3.10
-    conda activate sheffield_rcc-docs	# . activate sheffield_rcc-docs on older versions of conda
+    conda create -n sds-docs python=3.10
+    conda activate sds-docs	# . activate sds-docs on older versions of conda
     pip install tox
 
 #. To build the HTML documentation run::
 
-    tox -e py310
+    tox -e py311
 
 The output should be written to ``./_build/html``.
 
@@ -95,21 +94,21 @@ Check external links
 
 Do this with: ::
 
-   tox -e py310-linkcheck
+   tox -e py311-linkcheck
 
 Continuous build and serve
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Build and serve the site and automatically rebuild when source files change: ::
 
-   tox -e py310-livehtml
+   tox -e py311-livehtml
 
 Testing the building of the documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The validity of the reStructuredText in this repo and the ability to convert that to HTML with Sphinx can be tested in three ways:
 
-* Locally by contributors when they run e.g. ``tox -e py310-livehtml``
+* Locally by contributors when they run e.g. ``tox -e py311-livehtml``
 * By a `GitHub Actions <https://github.com/rcgsheffield/Sheffield_RCC_Docs/actions/>`_ Workflow each time a contributor creates or updates a Pull Request.
 * By the build and deploy `GitHub Action <https://github.com/rcgsheffield/Sheffield_RCC_Docs/actions/>`_ Workflow on each push to the ``main`` branch.
 
