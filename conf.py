@@ -63,6 +63,7 @@ language = 'en'
 # directories to ignore when looking for source files.
 exclude_patterns = [
     '_build',
+    "_archive",
     'themes',
     'README.rst',
     'global.rst',

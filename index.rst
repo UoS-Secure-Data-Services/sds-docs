@@ -19,7 +19,6 @@ Take a look at the `Research and Innovation <https://students.sheffield.ac.uk/it
   :maxdepth: 1
   :glob:
 
-  ronin/index
-  pilot/index
+  rcc/index
   dsh/index
   glossary

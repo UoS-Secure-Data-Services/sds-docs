@@ -1,7 +1,7 @@
-.. _index:
+.. _ronin-home:
 
-Ronin Documentation
-=======================================
+Ronin
+=====
 
 Ronin is the frontend user interface that connects researchers up to the AWS backed infrastructure.
 
@@ -20,7 +20,7 @@ Once you've gotten through those we've got some further details on how and what 
 
 .. toctree::
   :hidden:
-  :maxdepth: 1
+  :maxdepth: 2
   :glob:
 
   networking

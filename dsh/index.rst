@@ -13,5 +13,7 @@ As the DSH is a more controlled environment certain aspects of the system are di
   :glob:
 
   accessing-the-dsh
+  data-ingress
 
 * :ref:`accessing-the-dsh`
+* :ref:`data-ingress`

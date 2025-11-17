@@ -22,7 +22,7 @@ Unable to connect to new machine
 .. image:: images/demo_running.jpg
     :align: center
 
-**Solution:** Windows images are not handled properly in the current Ronin build. They typically take 15 minutes to start-up at initial creation, simply wait a little longer before trying to connect. Avoid restarting the machine during this time.
+**Solution:** The typical issue is that Windows servers take a little while longer to start up as opposed to Linux. The machine should be available after about 5 minutes from creation. Avoid restarting the machine during this time. If it should not become available after 10+ minutes please contact support.
 
 Unable to connect to machine - Reoccurring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
