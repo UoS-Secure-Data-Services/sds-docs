@@ -1,6 +1,6 @@
 .. _dsh-home:
 
-Data Safe Haven
+Data Safe Haven (DSH)
 =======================================
 
 This section of the documentation contains information about the differences between the :term:`DSH` and :term:`RCC` platform.
