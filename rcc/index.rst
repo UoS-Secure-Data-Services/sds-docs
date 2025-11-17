@@ -1,7 +1,7 @@
 .. _rcc-home:
 
-Research Cloud Compute (RCC) Documentation
-==========================================
+Research Cloud Compute (RCC)
+============================
 
 This section of the documentation details the known issues, limitations and considerations around the :term:`RCC` platform.
 
