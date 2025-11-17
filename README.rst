@@ -1,10 +1,14 @@
 .. image:: https://github.com/rcgsheffield/sheffield_rcc_docs/actions/workflows/static.yml/badge.svg
     :target: https://github.com/rcgsheffield/Sheffield_RCC_Docs/actions/workflows/static.yml
 
-Sheffield Research Cloud Computing documentation
+Sheffield Research Secure Data Services documentation
 ==================================================
 
-This is the source for the documentation of The University of Sheffield's Research Cloud Computing resources.
+This is the source for the documentation of The University of Sheffield's Secure Data Services, this includes:
+
+- RCC (Research Cloud Compute)
+- DSH (Data Safe Haven)
+- Redcap
 
 It is written in the reStructuredText_ (*rst*) format and the Sphinx_ tool is used to convert this to a set of HTML pages.
 
