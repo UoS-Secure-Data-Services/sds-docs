@@ -1,4 +1,4 @@
-.. _rcc-home:
+.. _sds-home:
 
 Secure Data Services & Research Cloud Computing @ Sheffield
 ===========================================================
