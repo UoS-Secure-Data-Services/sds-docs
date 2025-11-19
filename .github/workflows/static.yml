@@ -8,52 +8,27 @@ on:
   # Or manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    strategy:
-      # Spawn and run a job for Python 3.11 version
-      matrix:
-        python: ["3.11"]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-      # Install python
-      - name: Set up a version of Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: ${{ matrix.python }}
-      # Install Tox for build stage
-      - name: Upgrade pip and install Tox
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install tox
-      # Run build stage
-      - name: Generate pages
-        run: tox -e py311
-      # Now upload to Github Pages
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v6
         with:
-          # Upload entire repository
-          path: '_build/html'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          python-version: 3.12
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: ~/.cache 
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install -r requirements.txt
+      - run: mkdocs gh-deploy --force
