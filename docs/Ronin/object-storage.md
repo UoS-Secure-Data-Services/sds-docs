@@ -319,7 +319,7 @@ something only accessible via the VPN.
     And suggest you read through the [Quick Setup](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html)
     page to get a firm understanding of the CLI tool.
 
-    Before you can run any CLI commands you'll need to ensure you've [logged in](https://docs.aws.amazon.com/signin/latest/userguide/command-line-sign-in.html)
+    Before you can run any CLI commands you'll need to ensure you've [logged in](https://docs.aws.amazon.com/signin/latest/userguide/command-line-sign-in.html).
 
     You'll want to use the keys generated for your bucket during the quick
     setup along with the default region of `eu-west-2` The region
