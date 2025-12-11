@@ -228,7 +228,7 @@ from the bucket:
 
 !!! info
     These commands rely on you having AWS CLI installed, have collected the *full* bucket name and `endpoint-url` from within the Ronin UI.
-    See [Accessing Object Storage](.#__tabbed_2_2) for info on how to find this.
+    See [Accessing Object Storage](#__tabbed_2_2) for info on how to find this.
 
 ``` bash title="Delete Versions"
 aws s3api delete-objects --bucket <BUCKET NAME> \
