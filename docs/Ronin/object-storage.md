@@ -226,18 +226,23 @@ configured using your bucket access keys, you'll want to use the below
 commands to first delete all object versions and then delete markers
 from the bucket:
 
+!!! info
+    These commands rely on you having AWS CLI installed, have collected the *full* bucket name and `endpoint-url` from within the Ronin UI.
+    See [Accessing Object Storage](.#__tabbed_2_2) for info on how to find this.
+
 ``` bash title="Delete Versions"
 aws s3api delete-objects --bucket <BUCKET NAME> \
   --delete "$(aws s3api list-object-versions --bucket <BUCKET NAME> \
-  --query='{Objects: Versions[].{Key:Key,VersionId:VersionId}}')"
+  --query='{Objects: Versions[].{Key:Key,VersionId:VersionId}}')" \
+  --endpoint-url <SERVER URL>
 ```
 
 ``` bash title="Delete 'Delete markers'"
 aws s3api delete-objects --bucket <BUCKET NAME> \
   --delete "$(aws s3api list-object-versions --bucket <BUCKET NAME> \
-  --query='{Objects: DeleteMarkers[].{Key:Key,VersionId:VersionId}}')"
+  --query='{Objects: DeleteMarkers[].{Key:Key,VersionId:VersionId}}')" \
+  --endpoint-url <SERVER URL>
 ```
-
 
 !!! warning
     These commands will delete **ALL** versions and delete markers in the bucket!
@@ -310,11 +315,11 @@ something only accessible via the VPN.
     alternate solutions for Linux.
 
     Firstly you'll want to follow the instructions found here: [Installing
-    or updating the latest version of the AWS
-    CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-    Followed by the [Quick
-    Setup](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html)
-    page.
+    or updating the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+    And suggest you read through the [Quick Setup](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html)
+    page to get a firm understanding of the CLI tool.
+
+    Before you can run any CLI commands you'll need to ensure you've [logged in](https://docs.aws.amazon.com/signin/latest/userguide/command-line-sign-in.html).
 
     You'll want to use the keys generated for your bucket during the quick
     setup along with the default region of `eu-west-2` The region
@@ -330,8 +335,8 @@ something only accessible via the VPN.
     At the top is the Server URL, we'll be adding this server url onto any
     command we issue to S3, we do this via the `--endpoint-url` flag. If it
     is forgotten you'll probably end up with an "Access Denied" style
-    error. At the bottom is the Path to our S3 bucket, we'll be appending
-    this to `s3:\\` in our commands as a way to point to the bucket.
+    error. At the bottom is the Path to our S3 bucket (This is also the full bucket name),
+    we'll be appending this to `s3:\\` in our commands as a way to point to the bucket.
 
     An example command to upload the `data.txt` file from my current working
     directory to an S3 bucket would look like this:
