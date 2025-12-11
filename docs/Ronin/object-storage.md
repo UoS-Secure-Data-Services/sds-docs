@@ -226,18 +226,23 @@ configured using your bucket access keys, you'll want to use the below
 commands to first delete all object versions and then delete markers
 from the bucket:
 
+!!! info
+    These commands rely on you having AWS CLI installed, have collected the *full* bucket name and `endpoint-url` from within the Ronin UI.
+    See [Accessing Object Storage](.#__tabbed_2_2) for info on how to find this.
+
 ``` bash title="Delete Versions"
 aws s3api delete-objects --bucket <BUCKET NAME> \
   --delete "$(aws s3api list-object-versions --bucket <BUCKET NAME> \
-  --query='{Objects: Versions[].{Key:Key,VersionId:VersionId}}')"
+  --query='{Objects: Versions[].{Key:Key,VersionId:VersionId}}')" \
+  --endpoint-url <SERVER URL>
 ```
 
 ``` bash title="Delete 'Delete markers'"
 aws s3api delete-objects --bucket <BUCKET NAME> \
   --delete "$(aws s3api list-object-versions --bucket <BUCKET NAME> \
-  --query='{Objects: DeleteMarkers[].{Key:Key,VersionId:VersionId}}')"
+  --query='{Objects: DeleteMarkers[].{Key:Key,VersionId:VersionId}}')" \
+  --endpoint-url <SERVER URL>
 ```
-
 
 !!! warning
     These commands will delete **ALL** versions and delete markers in the bucket!
@@ -330,8 +335,8 @@ something only accessible via the VPN.
     At the top is the Server URL, we'll be adding this server url onto any
     command we issue to S3, we do this via the `--endpoint-url` flag. If it
     is forgotten you'll probably end up with an "Access Denied" style
-    error. At the bottom is the Path to our S3 bucket, we'll be appending
-    this to `s3:\\` in our commands as a way to point to the bucket.
+    error. At the bottom is the Path to our S3 bucket (This is also the full bucket name),
+    we'll be appending this to `s3:\\` in our commands as a way to point to the bucket.
 
     An example command to upload the `data.txt` file from my current working
     directory to an S3 bucket would look like this:
