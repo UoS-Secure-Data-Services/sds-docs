@@ -17,7 +17,17 @@ look at other available methods available to you such as [Object Storage](../Ron
     with us via the IT Services Helpdesk or if you are an external data
     provider please reach out to your UoS contacts.
 
-### Generating Keys
+The docs here are broken up into Uploading and Accessing data, with the former aimed at both internal and external 3rd parties looking to upload data into the system and the latter aimed at internal users looking to access this uploaded data within the system.
+
+### Uploading Data
+
+This section of the docs is aimed at those looking to upload data to the SFTP service.
+The process is broken down into two steps:
+
+- Generating credentials to be used to access the system
+- Connecting and uploading data
+
+#### Generating Keys
 
 Should you be granted access to the service you'll need to generate an
 RSA or ECDSA key pair, and forward the public key to your internal
@@ -64,7 +74,7 @@ contact.
     anyone! The `<key-name>.pub` file should be forwarded onto your internal
     contact.
 
-### Connecting
+#### Connecting
 
 Once you've been given the green light that your account has been
 created with the public key you've provided from the steps above
@@ -141,3 +151,25 @@ port with the software suggested below.
 
     - [Cyberduck](https://cyberduck.io/) for Mac
     - [FileZilla](https://filezilla-project.org/) for Linux or Mac
+
+### Accessing Data
+
+If you are a user of the system now looking to access the data uploaded to the SFTP service read on.
+
+When data is uploaded to the SFTP service the data will be placed inside of a new bucket within your project given the name `<PROJECT NAME>-ingress` like shown below:
+
+<figure markdown="span">
+![image](images/sftp/ingress-bucket.png)
+</figure>
+
+!!! warning
+
+    A bucket with this prefix is created whenever one of our ingress systems is used and one does not already exist. If you have already created a bucket with this naming structure be warned that these services will interact with the bucket.
+
+Data uploaded to the SFTP service will be placed into a folder at the top level called `SFTP`, within that sub-folders will be created for each user of the service assigned to your project, these will be given the name of the user that uploaded the data.
+
+The upload process to the SFTP service is a one way system, that means that data that comes into the system cannot go out this way. For example if you were to upload data into this bucket it will not be made accessible to the SFTP users. At a technical level objects within the ingress bucket are air-gapped from the SFTP users.
+
+!!! note
+
+    You are free to use the ingress bucket however you would any other bucket within your project, just be aware that various mechanisms within the RCC service has access into these buckets to place ingress data into.
