@@ -4,7 +4,7 @@ This page contains information regarding the University of Sheffield's instance 
 
 Maintenance of these servers is performed at 9am Monday with emails sent out before and on completion.
 
-For more information, please contact the [SDS team](insert email Ross gives me here)
+For more information, please contact the SDS team by email at [research-it@sheffield.ac.uk](mailto:research-it@sheffield.ac.uk)
 
 !!! warning
 
