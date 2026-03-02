@@ -27,11 +27,9 @@ with your university account.
 !!! note
 
     You will only be able to access your workspace via a University of
-    Sheffield managed desktop while onsite (connected to the campus
-    network).
-
-    Attempting to connect while offsite, even while connected to the VPN
-    will result in an authentication failure.
+    Sheffield managed *Windows* desktop.
+    
+    You will be presented with an access error on any other unsupported platform.
 
 During the account setup process you should have received an email
 containing the registration code for your WorkSpace. Once you open the
