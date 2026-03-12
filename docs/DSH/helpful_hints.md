@@ -1,0 +1,17 @@
+# Helpful hints
+
+If there's something you're looking for here, and it's not here, chances are it should be so get in touch and we'll add it.
+
+## Can't see the disk you've added in a Windows machine?
+
+If you're wondering why you can't see the disk you've added to a windows machine, you'll need to follow these instructions, they won't appear automatically
+
++ [Preparing a new disk in Windows](https://learn.microsoft.com/en-us/windows-server/storage/disk-management/initialize-new-disks)
+
+Alternatively, you might be moving a disk from one Windows machine to another
+
++ [Moving a disk between Windows machines in Ronin](https://blog.ronin.cloud/lifes-too-short-to-troubleshoot-windows/)
+
+## Can't see the disk you've added in a Linux machine?
+
+Your disk will be in the directory **/mnt/sdX** where X can be **d** for the first additional disk, and so on.
