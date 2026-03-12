@@ -14,4 +14,4 @@ Alternatively, you might be moving a disk from one Windows machine to another
 
 ## Can't see the disk you've added in a Linux machine?
 
-Your disk will be in the directory **/mnt/sdX** where X can be **d** for the first additional disk, and so on.
+Your disk will be in the directory **/mnt/sdX** where X can be **d** for the first additional disk, and so on, if you specified it at machine creation. If not, you'll have to reboot the machine then find the disk in the /dev/ directory and create an /etc/fstab entry using sudo before mounting. 
