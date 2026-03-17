@@ -5,7 +5,7 @@ the DSH platform.
 
 ## DSH Internal Users
 
-University of Sheffield users of the DSH can request data ingress into their project environment by raising a TopDesk ticked with the SDS. 
+University of Sheffield users of the DSH can request data ingress into their project environment by raising a TopDesk ticket with the SDS. 
 
 !!! info
     
