@@ -1,10 +1,39 @@
 # Data Ingress
 
-This document is focused on external data ingress methods supported by
-the RCC platform. If you are an internal user looking to upload data to the platform you may wish to
-look at other available methods available to you such as [Object Storage](../Ronin/object-storage.md)
+This document is focused on data ingress methods supported by
+the DSH platform. 
 
-## SFTP
+## DSH Internal Users
+
+University of Sheffield users of the DSH can request data ingress into their project environment by raising a TopDesk ticked with the SDS. 
+
+!!! info
+    
+    When making a formal request for Data Ingress you should provide the following information:
+
+    * The name of the project environment you want to ingress data to.
+    * A short description of the reasons why the data needs to be ingressed.
+    * A list and short description of each file to be ingressed.
+
+    If the request does not match the data to be ingressed the request may be denied.
+
+Briefly the process is as follows
+
+1. A user identifies the specific files needed—such as a dataset, a CSV, or code. 
+2. A formal request is submitted to the SDS by raising a topdesk ticket
+3. A link, that has a predefined expiration date and can’t be used afterwards, is emailed to the requester where the data is uploaded to a neutral holding area outside the secure DSH.
+4. Before the data moves from the holding area into the DSH, it undergoes manual checks to ensure the contents are correct
+5. Once cleared, the SDS team moves the files into a S3 storage area within the project workspace.
+
+!! info
+
+    Important
+    If the files differ or additional files are added to the ingress request link the request will be rejected and you must reapply.
+    If there are files with the same name and file structure already existing within the DSH these files will be overwritten. 
+    Each DSH workspace will have only one ingress bucket. We recommend using a robust and clean directory structure to avoid messiness and files being overwritten. The file structure can be requested from the SDS.
+
+## DSH External Users (SFTP)
+The docs here are broken up into Uploading and Accessing data, with the former aimed at both UoS and external 3rd parties looking to upload data into the system and the latter aimed at internal users looking to access this uploaded data within the system.
 
 !!! info
 
@@ -17,7 +46,6 @@ look at other available methods available to you such as [Object Storage](../Ron
     with us via the IT Services Helpdesk or if you are an external data
     provider please reach out to your UoS contacts.
 
-The docs here are broken up into Uploading and Accessing data, with the former aimed at both internal and external 3rd parties looking to upload data into the system and the latter aimed at internal users looking to access this uploaded data within the system.
 
 ### Uploading Data
 
