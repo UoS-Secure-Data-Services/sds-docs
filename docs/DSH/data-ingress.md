@@ -17,12 +17,12 @@ University of Sheffield users of the DSH can request data ingress into their pro
 
     If the request does not match the data to be ingressed the request may be denied.
 
-Briefly the process is as follows
+Briefly the process is as follows:
 
 1. A user identifies the specific files needed—such as a dataset, a CSV, or code. 
-2. A formal request is submitted to the SDS by raising a topdesk ticket
+2. A formal request is submitted to the SDS by raising a topdesk ticket.
 3. A link, that has a predefined expiration date and can’t be used afterwards, is emailed to the requester where the data is uploaded to a neutral holding area outside the secure DSH.
-4. Before the data moves from the holding area into the DSH, it undergoes manual checks to ensure the contents are correct
+4. Before the data moves from the holding area into the DSH, it undergoes manual checks to ensure the contents are correct.
 5. Once cleared, the SDS team moves the files into a S3 storage area within the project workspace.
 
 !! info
@@ -52,8 +52,8 @@ The docs here are broken up into Uploading and Accessing data, with the former a
 This section of the docs is aimed at those looking to upload data to the SFTP service.
 The process is broken down into two steps:
 
-- Generating credentials to be used to access the system
-- Connecting and uploading data
+- Generating credentials to be used to access the system.
+- Connecting and uploading data.
 
 #### Generating Keys
 
