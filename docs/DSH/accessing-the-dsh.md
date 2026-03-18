@@ -12,26 +12,22 @@ Before proceeding, you'll need to ensure you have received conformation
 that your DSH account and workspace has been fully provisioned for use
 with your university account.
 
-1. Open the Software Center, search for and ensure the "Update Computer Certificate Acl" application is available and installed: <figure markdown="span"> ![image](images/ws-install-2.png)</figure>
+1. Download the latest Windows client from the [WorkSpaces](https://clients.amazonworkspaces.com/) website
 
-2. Download the latest Windows client from the [WorkSpaces](https://clients.amazonworkspaces.com/) website
+2. Run the WorkSpaces client installer, when prompted choose "Install just for you": <figure markdown="span">![image](images/ws-install-1.png)</figure>
 
-3. Run the WorkSpaces client installer, when prompted choose "Install just for you": <figure markdown="span">![image](images/ws-install-1.png)</figure>
+3. If prompted with a prompt to install a new certificate for the `Starfield Services Root Certificate Authority (CA)` select `Yes` <figure markdown="span">![image](images/ws-install-3.png)</figure>
 
-4. If prompted with a prompt to install a new certificate for the `Starfield Services Root Certificate Authority (CA)` select `Yes` <figure markdown="span">![image](images/ws-install-3.png)</figure>
-
-5. Follow through the rest of the prompts until the installer has finished
+4. Follow through the rest of the prompts until the installer has finished
 
 ## Connect To Your WorkSpace
 
 !!! note
 
     You will only be able to access your workspace via a University of
-    Sheffield managed desktop while onsite (connected to the campus
-    network).
-
-    Attempting to connect while offsite, even while connected to the VPN
-    will result in an authentication failure.
+    Sheffield managed *Windows* desktop.
+    
+    You will be presented with an access error on any other unsupported platform.
 
 During the account setup process you should have received an email
 containing the registration code for your WorkSpace. Once you open the
