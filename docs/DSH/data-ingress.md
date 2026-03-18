@@ -15,8 +15,6 @@ University of Sheffield users of the DSH can request data ingress into their pro
     * A short description of the reasons why the data needs to be ingressed.
     * A list and short description of each file to be ingressed.
 
-    If the request does not match the data to be ingressed the request may be denied.
-
 Briefly the process is as follows:
 
 1. A user identifies the specific files needed—such as a dataset, a CSV, or code. 
