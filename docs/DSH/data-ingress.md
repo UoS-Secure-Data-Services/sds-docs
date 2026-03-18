@@ -25,12 +25,11 @@ Briefly the process is as follows:
 4. Before the data moves from the holding area into the DSH, it undergoes manual checks to ensure the contents are correct.
 5. Once cleared, the SDS team moves the files into a S3 storage area within the project workspace.
 
-!! info
+!!! important
 
-    Important
-    If the files differ or additional files are added to the ingress request link the request will be rejected and you must reapply.
-    If there are files with the same name and file structure already existing within the DSH these files will be overwritten. 
-    Each DSH workspace will have only one ingress bucket. We recommend using a robust and clean directory structure to avoid messiness and files being overwritten. The file structure can be requested from the SDS.
+    * If the uploaded files differ or additional files are added to the ingress request link the request will be rejected and you must reapply.
+    * If there are files with the same name and file structure already existing within the DSH these files will be overwritten. 
+    * Each DSH workspace will have only one ingress bucket. We recommend using a robust and clean directory structure to avoid messiness and files being overwritten.
 
 ## DSH External Users (SFTP)
 The docs here are broken up into Uploading and Accessing data, with the former aimed at both UoS and external 3rd parties looking to upload data into the system and the latter aimed at internal users looking to access this uploaded data within the system.
