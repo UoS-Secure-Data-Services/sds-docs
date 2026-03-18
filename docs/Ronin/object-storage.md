@@ -329,7 +329,7 @@ something only accessible via the VPN.
         ![image](images/object-storage/connection-info.gif){.align-center}
     </figure>
 
-    To form our CLI commands we'll a couple more pieces of the puzzle these
+    To form our CLI commands we'll need a couple more pieces of the puzzle these
     also happen to be available in the connection info page.
 
     At the top is the Server URL, we'll be adding this server url onto any
