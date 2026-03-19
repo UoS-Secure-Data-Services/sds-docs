@@ -354,3 +354,42 @@ something only accessible via the VPN.
         `aws configure` for each bucket you wish to connect to. Unless you wish
         to read further and setup profiles for each bucket:
         <https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html>
+
+=== "rclone"
+
+    You'll first have to create a file in your '~/.config/rclone/rclone.conf' file. Here's an example but you'll need to substitute some values from the Ronin UI, namely:
+	+ Name of the Remote
+	+ Access Key
+	+ Secret Access Key
+	+ Path 
+    
+	You can either create this file manually or go through a question-based process on the command-line by typing **rclone config**. You can get this information by clicking three dots on your bucket under the "Object Storage" menu option, and clicking "Connect Info"
+	
+	```
+	[20260318-bucket]
+    type = s3
+    provider = AWS
+    env_auth = false
+    access_key_id = <your access key here>
+    secret_access_key = <your secret key >
+    region = eu-west-2
+    location_constraint = eu-west-2
+    acl = private 
+    endpoint = <path, should look something like thisbucket.vpce-0f277uc21dea54e824-mhw2yb6y.s3.eu-west-2.vpce.amazonaws.com
+
+	```
+	You may want to change the ACL.
+	
+	Then you can use commands like:
+	
+	```
+	# List the files in the bucket
+	rclone ls  <remote e.g.20260318-bucket>:<path to bucket e.g. 20260318-bucket.store.rcc-dev.shef.ac.uk>
+	
+    #Copy a file to the bucket, the --s3-no-check-bucket is important
+    rclone copy --s3-no-check-bucket <name of file>  <remote>:<path>
+	
+	#Copy a file back from the bucket
+	rclone copy <remote>:<path>/<name of file> .
+	
+	```
