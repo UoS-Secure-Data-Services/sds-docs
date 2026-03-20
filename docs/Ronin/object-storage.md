@@ -379,8 +379,17 @@ something only accessible via the VPN.
     no_check_bucket = true
 
 	```
-	You may want to change the ACL.
+    !!! Warning - no_check_bucket = true
+	    On the Ronin system, using this is essential or you will get an error like this; ` not authorized to perform: s3:CreateBucket on resource: "arn:aws:s3:::<your bucket name>" because no identity-based policy allows the s3:CreateBucket action`
+		You won't see this if you generate the configuration file with `rclone config` and will have to edit it yourself. Alternatively, add the option to the command as shown below.
 	
+	You may want to change the ACL; the options are taken from [here](rclone.org/s3/#configuration) and summarised below. 
+
+	 + "private" - Owner gets FULL_CONTROL. No one else has access rights (default).
+     + "public-read" - Owner gets FULL_CONTROL. The AllUsers group gets READ access.
+     + "public-read-write" - Owner gets FULL_CONTROL. The AllUsers group gets READ and WRITE access. Granting this on a bucket is generally not recommended.
+     + "authenticated-read" - Owner gets FULL_CONTROL. The AuthenticatedUsers group gets READ access.
+
 	Then you can use commands like:
 	
 	```
@@ -392,5 +401,15 @@ something only accessible via the VPN.
 	
 	#Copy a file back from the bucket
 	rclone copy <remote>:<path>/<name of file> .
+	
+	```
+
+	If you've not set the `no_check_bucket = true` in the rclone config file, you can add to each command individually like this;
+	```
+	#Copy a file to the bucket, the --s3-no-check-bucket is important
+    rclone copy --s3-no-check-bucket <name of file>  <remote>:<path>
+	
+	#Copy a file back from the bucket
+	rclone copy --s3-no-check-bucket <remote>:<path>/<name of file> .
 	
 	```
