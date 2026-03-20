@@ -363,7 +363,7 @@ something only accessible via the VPN.
 	+ Secret Access Key
 	+ Path 
     
-	You can either create this file manually or go through a question-based process on the command-line by typing **rclone config**. You can get this information by clicking three dots on your bucket under the "Object Storage" menu option, and clicking "Connect Info"
+	You can either create this file manually or go through a question-based process on the command-line by typing `rclone config`. You can get this information by clicking three dots on your bucket under the "Object Storage" menu option, and clicking "Connect Info"
 	
 	```
 	[20260318-bucket]
