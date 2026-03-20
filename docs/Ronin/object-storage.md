@@ -387,7 +387,7 @@ something only accessible via the VPN.
 	rclone ls  <remote e.g.20260318-bucket>:<path to bucket e.g. 20260318-bucket.store.rcc-dev.shef.ac.uk>
 	
     #Copy a file to the bucket, the --s3-no-check-bucket is important
-    rclone copy --s3-no-check-bucket <name of file>  <remote>:<path>
+    rclone copy <name of file>  <remote>:<path>
 	
 	#Copy a file back from the bucket
 	rclone copy <remote>:<path>/<name of file> .
