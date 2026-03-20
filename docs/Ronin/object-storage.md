@@ -376,6 +376,7 @@ something only accessible via the VPN.
     location_constraint = eu-west-2
     acl = private 
     endpoint = <path, should look something like thisbucket.vpce-0f277uc21dea54e824-mhw2yb6y.s3.eu-west-2.vpce.amazonaws.com
+    no_check_bucket = true
 
 	```
 	You may want to change the ACL.
