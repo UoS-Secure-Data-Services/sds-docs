@@ -1,4 +1,4 @@
-# Helpful hints
+# Helpful Hints
 
 If there's something you're looking for here, and it's not here, chances are it should be so get in touch and we'll add it.
 
