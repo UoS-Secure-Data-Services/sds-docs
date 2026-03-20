@@ -385,10 +385,10 @@ something only accessible via the VPN.
 	
 	You may want to change the ACL; the options are taken from [here](rclone.org/s3/#configuration) and summarised below. 
 
-	 + "private" - Owner gets FULL_CONTROL. No one else has access rights (default).
-     + "public-read" - Owner gets FULL_CONTROL. The AllUsers group gets READ access.
-     + "public-read-write" - Owner gets FULL_CONTROL. The AllUsers group gets READ and WRITE access. Granting this on a bucket is generally not recommended.
-     + "authenticated-read" - Owner gets FULL_CONTROL. The AuthenticatedUsers group gets READ access.
+    + **"private"** - Owner gets FULL_CONTROL. No one else has access rights (default).
+    + **"public-read"** - Owner gets FULL_CONTROL. The AllUsers group gets READ access.
+    + **"public-read-write"** - Owner gets FULL_CONTROL. The AllUsers group gets READ and WRITE access. Granting this on a bucket is generally not recommended.
+    + **"authenticated-read"** - Owner gets FULL_CONTROL. The AuthenticatedUsers group gets READ access.
 
 	Then you can use commands like:
 	
