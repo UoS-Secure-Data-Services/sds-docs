@@ -365,7 +365,7 @@ something only accessible via the VPN.
     
 	You can either create this file manually or go through a question-based process on the command-line by typing `rclone config`. You can get this information by clicking three dots on your bucket under the "Object Storage" menu option, and clicking "Connect Info"
 	
-	```
+	```ini
 	[20260318-bucket]
     type = s3
     provider = AWS
