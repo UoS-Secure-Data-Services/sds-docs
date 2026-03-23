@@ -380,7 +380,7 @@ something only accessible via the VPN.
     no_check_bucket = true
 
 	```
-    !!! Warning - no_check_bucket = true
+    !!! Warning "Warning - `no_check_bucket = true`"
 	    On the Ronin system, using this is essential or you will get an error like this; ` not authorized to perform: s3:CreateBucket on resource: "arn:aws:s3:::<your bucket name>" because no identity-based policy allows the s3:CreateBucket action`
 		You won't see this if you generate the configuration file with `rclone config` and will have to edit it yourself. Alternatively, add the option to the command as shown below.
 	
