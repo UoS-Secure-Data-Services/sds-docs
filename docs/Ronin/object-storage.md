@@ -395,7 +395,7 @@ something only accessible via the VPN.
 	
 	```
 	# List the files in the bucket
-	rclone ls  <remote e.g.20260318-bucket>:<path to bucket e.g. 20260318-bucket.store.rcc-dev.shef.ac.uk>
+	rclone ls  <remote e.g.bucket-name>:<path to bucket e.g. <bucket name>.store.rcc.shef.ac.uk>
 	
     #Copy a file to the bucket
     rclone copy <name of file> <remote>:<path>
