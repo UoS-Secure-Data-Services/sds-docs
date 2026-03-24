@@ -354,3 +354,63 @@ something only accessible via the VPN.
         `aws configure` for each bucket you wish to connect to. Unless you wish
         to read further and setup profiles for each bucket:
         <https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html>
+
+=== "OS Agnostic - Rclone"
+
+    You'll first have to create a file in your `~/.config/rclone/rclone.conf` file. Here's an example but you'll need to substitute some values from the Ronin UI, namely:
+
+	+ Name of the Remote
+	+ Access Key
+	+ Secret Access Key
+	+ Path 
+    
+	You can either create this file manually or go through a question-based process on the command-line by typing `rclone config`. You can get this information by clicking three dots on your bucket under the "Object Storage" menu option, and clicking "Connect Info"
+	
+	```ini
+	[20260318-bucket]
+    type = s3
+    provider = AWS
+    env_auth = false
+    access_key_id = <your access key here>
+    secret_access_key = <your secret key >
+    region = eu-west-2
+    location_constraint = eu-west-2
+    acl = private 
+    endpoint = <path, should look something like thisbucket.<vpc endpoint>.s3.eu-west-2.vpce.amazonaws.com
+    no_check_bucket = true
+
+	```
+    !!! Warning "Warning - `no_check_bucket = true`"
+	    On the Ronin system, using this is essential or you will get an error like this; ` not authorized to perform: s3:CreateBucket on resource: "arn:aws:s3:::<your bucket name>" because no identity-based policy allows the s3:CreateBucket action`
+		You won't see this if you generate the configuration file with `rclone config` and will have to edit it yourself. Alternatively, add the option to the command as shown below.
+	
+	You may want to change the ACL; the options are taken from [here](rclone.org/s3/#configuration) and summarised below. 
+
+    + **"private"** - Owner gets FULL_CONTROL. No one else has access rights (default).
+    + **"public-read"** - Owner gets FULL_CONTROL. The AllUsers group gets READ access.
+    + **"public-read-write"** - Owner gets FULL_CONTROL. The AllUsers group gets READ and WRITE access. Granting this on a bucket is generally not recommended.
+    + **"authenticated-read"** - Owner gets FULL_CONTROL. The AuthenticatedUsers group gets READ access.
+
+	Then you can use commands like:
+	
+	```
+	# List the files in the bucket
+	rclone ls  <remote e.g.bucket-name>:<path to bucket e.g. <bucket name>.store.rcc.shef.ac.uk>
+	
+    #Copy a file to the bucket
+    rclone copy <name of file> <remote>:<path>
+	
+	#Copy a file back from the bucket
+	rclone copy <remote>:<path>/<name of file> .
+	
+	```
+
+	If you've not set the `no_check_bucket = true` in the rclone config file, you can add to each command individually like this;
+	```
+	#Copy a file to the bucket, the --s3-no-check-bucket is important
+    rclone copy --s3-no-check-bucket <name of file>  <remote>:<path>
+	
+	#Copy a file back from the bucket
+	rclone copy --s3-no-check-bucket <remote>:<path>/<name of file> .
+	
+	```
