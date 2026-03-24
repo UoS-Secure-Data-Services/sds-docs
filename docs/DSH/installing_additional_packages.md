@@ -1,4 +1,4 @@
-# Installing packages in the DSH machine
+# Installing software packages on DSH machines
 
 There is a proxy setup in the DSH allowing users to download a set of Python pypi and R's CRAN packages.
 
