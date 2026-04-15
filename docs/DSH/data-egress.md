@@ -3,7 +3,7 @@
 This document is focused on data egress methods supported by the DSH platform.
 
 ## Introduction
-Data Egress is the process of moving data out of a system. For the DSH, egress means the controlled one-way exit used to extract datasets, code, or files from the DSH. Because the environment is isolated, protected and regulated, users cannot extract or copy information out of it without permission. A formal egress mechanism and procedure is used.
+Data Egress is the process of moving data out of a system. For the DSH, egress means the controlled  exit used to extract datasets, code, or files from the DSH. Because the environment is isolated and secure users cannot extract or copy information out of it without permission. A formal egress mechanism and procedure is used.
 
 The aim of a secure egress process is to ensure that no data passes through the airlock into a public workstation without full statistical disclosure checking and approval.
 
@@ -22,7 +22,7 @@ For examples of disclosure rules using patient data see [NHS methodology](https:
 
 The output checking procedure for University of Sheffield users of the DSH is as follows:
 
-1. A DSH user identifies the specific files needed to be egressed and moved them to a dedicated S3 storage bucket.
+1. A DSH user identifies the specific files needed to be egressed and moves them to a dedicated S3 storage bucket.
 2. Whether the information is safe to be moved out of the environment is discussed with the PI or the IAO.
 3. Once the PI / IAO has agreed on the egress request, a formal request is submitted to Data Connect to begin the statistical disclosure checking of the proposed outputs.
 4. Data Connect will carry out full disclosure checks on the proposed data to be egressed.
