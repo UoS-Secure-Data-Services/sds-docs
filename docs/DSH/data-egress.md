@@ -16,6 +16,8 @@ The aim of a secure egress process is to ensure that no data passes through the 
 ## Disclosure Checks
 Disclosure checking is carried out by [Data Connect](https://sheffield.ac.uk/data-connect) at the University of Sheffield to ensure no sensitive information is removed from the DSH.
 
+For examples of disclosure rules using patient data see [NHS methodology](https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics/disclosure-control-methodology-for-hospital-episode-statistics-and-emergency-care-data-set) for egressing results based on Hospital Episode Statistiscs from a secure data environment.
+
 ## Output checking process
 
 The output checking procedure for University of Sheffield users of the DSH is as follows:
