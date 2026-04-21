@@ -384,7 +384,7 @@ something only accessible via the VPN.
 	    On the Ronin system, using this is essential or you will get an error like this; ` not authorized to perform: s3:CreateBucket on resource: "arn:aws:s3:::<your bucket name>" because no identity-based policy allows the s3:CreateBucket action`
 		You won't see this if you generate the configuration file with `rclone config` and will have to edit it yourself. Alternatively, add the option to the command as shown below.
 	
-	You may want to change the ACL; the options are taken from [here](rclone.org/s3/#configuration) and summarised below. 
+	You may want to change the ACL; the options are taken from [here](https://rclone.org/s3/#configuration) and summarised below. 
 
     + **"private"** - Owner gets FULL_CONTROL. No one else has access rights (default).
     + **"public-read"** - Owner gets FULL_CONTROL. The AllUsers group gets READ access.
