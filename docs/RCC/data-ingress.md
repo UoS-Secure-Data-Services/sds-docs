@@ -1,37 +1,8 @@
 # Data Ingress
 
-This document is focused on data ingress methods supported by the DSH platform.
+This document is focused on data ingress methods supported by the RCC platform.
 
-### Choosing An Ingress Mechanism
-
-* For those looking to ingress small quantities of data (files <=1GB each) or only have access to a web browser we suggest using the [Web based](#web-based-file-ingress) file ingress mechanism
-* If files larger than 1GB need to be ingressed we suggest using the [SFTP based](#sftp-based-file-ingress) file ingress mechanism
-
-## Web Based File Ingress
-
-University of Sheffield users of the DSH can request data ingress into their project environment by raising a TopDesk ticket with the SDS. 
-
-!!! info
-    
-    When making a formal request for Data Ingress you should provide the following information:
-
-    * The name of the project environment you want to ingress data to.
-    * A short description of the reasons why the data needs to be ingressed.
-    * A list and short description of each file to be ingressed.
-
-Briefly the process is as follows:
-
-1. A user identifies the specific files needed—such as a dataset, a CSV, or code. 
-2. A formal request is submitted to the SDS by raising a topdesk ticket.
-3. A link, that has a predefined expiration date and can’t be used afterwards, is emailed to the requester where the data is uploaded to a neutral holding area outside the secure DSH.
-4. Before the data moves from the holding area into the DSH, it undergoes manual checks to ensure the contents are correct.
-5. Once cleared, the SDS team moves the files into a S3 storage area within the project workspace.
-
-!!! important
-
-    * If the uploaded files differ or additional files are added to the ingress request link the request will be rejected and you must reapply.
-    * If there are files with the same name and file structure already existing within the DSH these files will be overwritten. 
-    * Each DSH workspace will have only one ingress bucket. We recommend using a robust and clean directory structure to avoid messiness and files being overwritten.
+Currently, the RCC platform supports SFTP-based file ingress for transferring data into the secure environment.
 
 ## SFTP Based File Ingress
 
@@ -109,7 +80,7 @@ Once you've been given the green light that your account has been
 created with the public key you've provided from the steps above
 you'll want to connect into the service to start transferring data.
 
-`sftp.dsh.shef.ac.uk` via port `22` is the primary endpoint for
+`sftp.rcc.shef.ac.uk` via port `22` is the primary endpoint for
 accessing the service. Use this when configuring the server address and
 port with the software suggested below.
 
@@ -183,9 +154,7 @@ port with the software suggested below.
 
 ## Accessing Data
 
-If you are a user of the system now looking to access the data uploaded by any of the ingress mechanisms read on.
-
-When data is uploaded via any of the ingress mechanisms the data will be placed inside of a new bucket within your project given the name `<PROJECT NAME>-ingress` like shown below:
+Once data has been uploaded via the SFTP mechanism, it will be placed inside a new bucket within your project with the name `<PROJECT NAME>-ingress`.
 
 <figure markdown="span">
 ![image](../images/sftp/ingress-bucket.png)
@@ -193,10 +162,10 @@ When data is uploaded via any of the ingress mechanisms the data will be placed 
 
 !!! warning
 
-    A bucket with this prefix is created whenever one of our ingress systems is used and one does not already exist. If you have already created a bucket with this naming structure be warned that these services will interact with the bucket.
+    A bucket with this prefix is created when the SFTP ingress system is first used if one does not already exist. If you have already created a bucket with this naming structure, be warned that this service will interact with that bucket.
 
-The upload process to the ingress mechanisms are one way, that means that data that comes into the system cannot go out this way. For example if you were to upload data into this bucket it will not be made accessible to the SFTP users. At a technical level objects within the ingress bucket are air-gapped from the various ingress mechanisms.
+The upload process to the SFTP ingress mechanism is one-way, meaning that data that comes into the system cannot go out this way. For example, if you were to upload data directly into this bucket (outside of the SFTP mechanism), it will not be made accessible to the SFTP users. At a technical level, objects within the ingress bucket are air-gapped from the SFTP ingress mechanism.
 
 !!! note
 
-    You are free to use the ingress bucket however it is strongly advised that you move data out and into a more suitable location for regular usage as newly uploaded data could overwrite files of the same name
+    You are free to use the ingress bucket; however, it is strongly advised that you move data out and into a more suitable location for regular usage as newly uploaded data could overwrite files of the same name.
