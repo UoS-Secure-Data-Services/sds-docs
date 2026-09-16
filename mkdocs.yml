@@ -1,7 +1,8 @@
 site_name: SDS Documentation
 site_url: https://docs.rcc.shef.ac.uk
-theme: 
+theme:
   name: material
+  variant: classic
   logo: assets/logo-white.png
   features:
     - content.tooltips
@@ -63,4 +64,4 @@ watch:
   - includes
   - overrides
 
-copyright: Copyright &copy; 2021 - 2025 The University of Sheffield
+copyright: Copyright &copy; 2021 - 2026 The University of Sheffield
