@@ -1,7 +1,8 @@
 site_name: SDS Documentation
 site_url: https://docs.rcc.shef.ac.uk
-theme: 
+theme:
   name: material
+  variant: classic
   logo: assets/logo-white.png
   features:
     - content.tooltips
